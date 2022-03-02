@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: myapplication
+  name: myapplication
+  namespace: k8s-demo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapplication
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: myapplication
+    spec:
+      containers:
+      - image: quluqi/core-mvc:v1.0.0
+        name: myapplication
+        resources: {}
+status: {}
